@@ -1,7 +1,6 @@
 package com.example.parsingdatawithviewmodel.repository
 
 import android.content.Context
-import android.util.Log
 import com.example.parsingdatawithviewmodel.models.Vacancy
 import com.example.parsingdatawithviewmodel.models.VacancyDetail
 import org.jsoup.Jsoup
@@ -55,7 +54,7 @@ class Repo {
 
                 val image = vacancy.select("img.vacancy-card__icon")
                     .attr("src")
-                Log.d("TAG", date)
+
                 listData.add(Vacancy(i, company, position, employmentType, salary, stack, image, date, vacancyUrl))
             }
         } catch (e: IOException) {

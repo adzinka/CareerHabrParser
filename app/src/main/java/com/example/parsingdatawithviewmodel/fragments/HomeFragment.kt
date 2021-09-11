@@ -17,6 +17,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: VacancyViewModel by viewModels()
+    private val adapter = VacancyAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,20 +25,26 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        binding.progressBar.visibility = View.VISIBLE
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-
-        val adapter = VacancyAdapter()
         binding.recyclerView.adapter = adapter
 
+        fetchVacancies()
 
-        viewModel.fetchData().observe(viewLifecycleOwner, Observer {
-            adapter.setListData(it)
-            binding.progressBar.visibility = View.GONE
-        })
+        binding.refreshLayout.setOnRefreshListener {
+            fetchVacancies()
+        }
 
         return binding.root
     }
+
+    private fun fetchVacancies() {
+        binding.refreshLayout.isRefreshing = true
+
+        viewModel.fetchData().observe(viewLifecycleOwner, Observer {
+            adapter.setListData(it)
+            binding.refreshLayout.isRefreshing = false
+        })
+    }
+
 
 }
