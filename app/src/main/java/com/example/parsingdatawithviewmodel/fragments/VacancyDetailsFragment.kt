@@ -5,24 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.parsingdatawithviewmodel.databinding.FragmentVacancyDetailsBinding
 import com.example.parsingdatawithviewmodel.viewmodels.VacancyViewModel
 import com.squareup.picasso.Picasso
 
 class VacancyDetailsFragment : Fragment() {
 
-    private lateinit var binding: FragmentVacancyDetailsBinding
-    private val viewModel by lazy { ViewModelProvider(this).get(VacancyViewModel::class.java) }
+    private var _binding: FragmentVacancyDetailsBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: VacancyViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-        binding = FragmentVacancyDetailsBinding.inflate(layoutInflater)
+        _binding = FragmentVacancyDetailsBinding.inflate(inflater, container, false)
 
         binding.progressLayout.visibility = View.VISIBLE
 

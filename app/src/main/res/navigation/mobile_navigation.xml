@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/homeFragment">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/homeFragment"
         android:name="com.example.parsingdatawithviewmodel.fragments.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Vacancies">
         <action
             android:id="@+id/action_navigation_home_to_vacancyDetailsFragment"
             app:destination="@id/vacancyDetailsFragment" />
@@ -18,9 +17,12 @@
     <fragment
         android:id="@+id/vacancyDetailsFragment"
         android:name="com.example.parsingdatawithviewmodel.fragments.VacancyDetailsFragment"
-        android:label="VacancyDetailsFragment" >
+        android:label="Vacancy details">
         <argument
             android:name="vacancy"
             app:argType="com.example.parsingdatawithviewmodel.models.Vacancy" />
+        <action
+            android:id="@+id/action_vacancyDetailsFragment_to_navigation_home"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

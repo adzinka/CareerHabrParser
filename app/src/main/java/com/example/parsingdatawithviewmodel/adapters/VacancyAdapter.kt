@@ -1,6 +1,5 @@
 package com.example.parsingdatawithviewmodel.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +11,10 @@ import com.example.parsingdatawithviewmodel.fragments.HomeFragmentDirections
 import com.example.parsingdatawithviewmodel.models.Vacancy
 import com.squareup.picasso.Picasso
 
-class VacancyAdapter(private val context: Context): RecyclerView.Adapter<VacancyAdapter.ViewHolder>() {
+class VacancyAdapter(): RecyclerView.Adapter<VacancyAdapter.ViewHolder>() {
 
     private var vacancies = mutableListOf<Vacancy>()
+
     fun setListData(data: MutableList<Vacancy>) {
         vacancies = data
         notifyDataSetChanged()
@@ -49,7 +49,7 @@ class VacancyAdapter(private val context: Context): RecyclerView.Adapter<Vacancy
 
             Picasso.get().load(vacancy.image).into(binding.logo)
 
-            itemView.setOnClickListener{
+            itemView.setOnClickListener {
                 val action = HomeFragmentDirections.actionNavigationHomeToVacancyDetailsFragment(vacancy)
                 findNavController().navigate(action)
             }
