@@ -12,6 +12,7 @@ data class Vacancy(
     var salary: String = "",
     var stack: String = "",
     var image: String = "",
+    var date: String = "",
     var url: String = ""
 ) : Parcelable
 

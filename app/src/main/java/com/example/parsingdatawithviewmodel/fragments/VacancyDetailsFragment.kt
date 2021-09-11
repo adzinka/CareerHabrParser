@@ -29,11 +29,14 @@ class VacancyDetailsFragment : Fragment() {
         val item = args.vacancy
 
         binding.companyTextView.text = item.company
+        binding.dateTextView.text = item.date
         binding.positionTextView.text = item.position
         binding.employmentTypeTextView.text = item.employmentType
         binding.salaryTextView.text = item.salary
         binding.stackTextView.text = item.stack
         Picasso.get().load(item.image).into(binding.logo)
+
+        if (binding.salaryTextView.text == "") binding.salaryTextView.visibility = View.GONE
 
         viewModel.fetchVacancy(item.url).observe(viewLifecycleOwner, Observer {
             binding.detailTextView.text = it.detail
