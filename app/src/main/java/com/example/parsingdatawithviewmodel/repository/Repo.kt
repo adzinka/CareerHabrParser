@@ -1,5 +1,6 @@
 package com.example.parsingdatawithviewmodel.repository
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.example.parsingdatawithviewmodel.models.Vacancy
 import com.example.parsingdatawithviewmodel.models.VacancyDetail
@@ -9,7 +10,9 @@ import java.io.IOException
 class Repo {
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         var instance: Repo? = null
+        @SuppressLint("StaticFieldLeak")
         lateinit var mContext: Context
     }
 

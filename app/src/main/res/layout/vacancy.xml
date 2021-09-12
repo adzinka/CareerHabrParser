@@ -53,7 +53,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="8dp"
                 android:paddingStart="16sp"
-                android:paddingEnd="16dp"
+                android:paddingEnd="8dp"
                 android:text="@{vacancy.date}"
                 android:textColor="#6E6A6A"
                 android:textSize="12sp" />
