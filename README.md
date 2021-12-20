@@ -1,9 +1,9 @@
 # CareerHabrParser
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/55358203/146767918-17ebc867-14e9-44c7-ba09-5b035ce1ebea.png" width="250" />
-  <img src="https://user-images.githubusercontent.com/55358203/146768024-d5902e9b-3ce6-4e7a-b77c-aeaa20676fc1.png" width="250" /> 
-  <img src="https://user-images.githubusercontent.com/55358203/146768120-4092c0a4-a74e-4aed-af67-ccc87d7009d2.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/55358203/146768981-7ddac5bf-a6cf-4357-96c3-119c7a62a84c.jpg" width="250" />
+  <img src="https://user-images.githubusercontent.com/55358203/146768986-8bea04ea-f621-4d2f-903a-cd5aa7c65070.jpg" width="250" /> 
+  <img src="https://user-images.githubusercontent.com/55358203/146768989-3d2134c8-700f-4b04-bd3c-3e6fb4d0a0a5.jpg" width="250" />
 </p>
   
 
